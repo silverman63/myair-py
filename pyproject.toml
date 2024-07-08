@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "resmed-py"
+version = "0.1.0"
+description = "API Client to interact with ResMed MyAir CPAP data"
+authors = ["Alex Silverman <alex@silverswatch.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+PyJWT = "^2.8.0"
+aiohttp = "^3.9.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
