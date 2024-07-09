@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "resmed-py"
+name = "myair-py"
 version = "0.1.0"
 description = "API Client to interact with ResMed MyAir CPAP data"
 authors = ["Alex Silverman <alex@silverswatch.com>"]
