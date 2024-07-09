@@ -1,7 +1,7 @@
 # resmed-py
 Python client for interacting with ResMed MyAir API
 
-This is a "soft" fork of the embedded client in a [reopo by](https://github.com/prestomation/resmed_myair_sensors/) @Prestomation. 
+This is a "soft" fork of the embedded client in a [repo by](https://github.com/prestomation/resmed_myair_sensors/) @Prestomation. 
 
 ## Known Issues
 
