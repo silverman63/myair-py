@@ -11,6 +11,7 @@ python = "^3.12"
 PyJWT = "^2.8.0"
 aiohttp = "^3.9.5"
 beautifulsoup4 = "^4.12.3"
+python-dotenv = "^1.0.0"
 
 [tool.poetry.group.dev.dependencies]
 

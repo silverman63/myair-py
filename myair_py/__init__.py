@@ -1,7 +1,7 @@
 from aiohttp import ClientSession
 from .legacy_client import LegacyClient
 from .new_client import RESTClient
-from .myair_client import MyAirConfig
+from .myair_client import MyAirConfig, AuthenticationError
 
 class ClientFactory:
     config: MyAirConfig
