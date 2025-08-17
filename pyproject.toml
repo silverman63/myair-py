@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "myair-py"
-version = "0.1.1"
+version = "0.1.2"
 description = "API Client to interact with ResMed MyAir CPAP data"
 authors = ["Alex Silverman <alex@silverswatch.com>"]
 license = "MIT"
