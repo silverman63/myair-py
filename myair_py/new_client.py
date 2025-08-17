@@ -26,7 +26,7 @@ US_CONFIG = {
     "authn_client_id": "aus4ccsxvnidQgLmA297",
     # This is the clientId that appears in request bodies during login
     "authorize_client_id": "0oa4ccq1v413ypROi297",
-    # Used as the x-api-key header for the AppSync GraphQL API
+    # Used as the x-api-key header for the GraphQL API
     "myair_api_key": "da2-cenztfjrezhwphdqtwtbpqvzui",
     # The Okta Endpoint where the creds go
     "authn_url": "https://resmed-ext-1.okta.com/api/v1/authn",
@@ -35,8 +35,8 @@ US_CONFIG = {
     "authorize_url": "https://resmed-ext-1.okta.com/oauth2/{authn_client_id}/v1/authorize",
     # The endpoint that the 'code' is sent to get an authorization token
     "token_url": "https://resmed-ext-1.okta.com/oauth2/{authn_client_id}/v1/token",
-    # The AppSync URL that accepts your token + the API key to return Sleep Recors
-    "appsync_url": "https://bs2diezuffgt5mfns4ucyz2vea.appsync-api.us-west-2.amazonaws.com/graphql",
+    # The GraphQL URL that accepts your token + the API key to return Sleep Records
+    "graphql_url": "https://graphql.myair-prd.dht.live/graphql",
     # Unsure if this needs to be regionalized, it is almost certainly something that is configured inside of an Okta allowlist
     "oauth_redirect_url": "https://myair2.resmed.com",
 }
@@ -58,6 +58,7 @@ class RESTClient(MyAirClient):
         ), "REST client used outside NA, this should not happen. Please file a bug"
         self.config = config
         self.session = session
+        # Note: session should be created with a cookie jar for proper authentication
 
     async def connect(self):
         # for connect, let's login and store the access token
@@ -164,7 +165,7 @@ class RESTClient(MyAirClient):
             "rmdhandsetid": "02c1c662-c289-41fd-a9ae-196ff15b5166",
             "rmdlanguage": "en",
             "rmdhandsetmodel": "Chrome",
-            "rmdhandsetosversion": "96.0.4664.110",
+            "rmdhandsetosversion": "127.0.6533.119",
             "rmdproduct": "myAir",
             "rmdappversion": "1.0.0",
             "rmdhandsetplatform": "Web",
@@ -172,7 +173,7 @@ class RESTClient(MyAirClient):
             "accept-language": "en-US,en;q=0.9",
         }
         async with self.session.post(
-            US_CONFIG["appsync_url"],
+            US_CONFIG["graphql_url"],
             headers=headers,
             json={
                 "operationName": operation_name,
